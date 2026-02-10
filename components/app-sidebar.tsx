@@ -7,7 +7,7 @@ import {
   SidebarGroup,
   SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem,
 } from '@/components/ui/sidebar'
-import { BarChart, Briefcase, Building2, LayoutGrid, MessagesSquare, Plus, Users } from 'lucide-react'
+import { BarChart, Briefcase, Building2, LayoutGrid, MessagesSquare, Users } from 'lucide-react'
 import React from 'react'
 import { NavMain } from '@/components/nav-main'
 
