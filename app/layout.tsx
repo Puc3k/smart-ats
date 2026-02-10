@@ -2,16 +2,12 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
 } from '@clerk/nextjs'
 import './globals.css'
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/app-sidebar'
 import { SiteHeader } from '@/components/site-header'
+import { ThemeProvider } from '@/components/theme-provider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -40,16 +36,23 @@ export default function RootLayout ({
         <body
           className={ `${ geistSans.variable } ${ geistMono.variable } antialiased` }
         >
-        <AppSidebar />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+        >
+          <AppSidebar/>
 
-        <SidebarInset>
-          <SiteHeader/>
+          <SidebarInset>
+            <SiteHeader/>
 
-          <main className="w-full">
-            { children }
-          </main>
+            <main className="w-full">
+              { children }
+            </main>
 
-        </SidebarInset>
+          </SidebarInset>
+
+        </ThemeProvider>
         </body>
         </html>
       </SidebarProvider>
