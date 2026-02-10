@@ -4,13 +4,42 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel,
+  SidebarGroup,
   SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem,
 } from '@/components/ui/sidebar'
-import { Building2, Plus } from 'lucide-react'
+import { BarChart, Briefcase, Building2, LayoutGrid, MessagesSquare, Plus, Users } from 'lucide-react'
 import React from 'react'
+import { NavMain } from '@/components/nav-main'
 
-
+const data = {
+  navMain: [
+    {
+      title: "Dashboard",
+      url: "#",
+      icon: LayoutGrid,
+    },
+    {
+      title: "Candidates",
+      url: "#",
+      icon: Users,
+    },
+    {
+      title: "Interviews",
+      url: "#",
+      icon: MessagesSquare
+    },
+    {
+      title: "Jobs / Positions",
+      url: "#",
+      icon: Briefcase,
+    },
+    {
+      title: "Analytics",
+      url: "#",
+      icon: BarChart,
+    }
+  ]
+}
 
 export function AppSidebar() {
   return (
@@ -20,7 +49,8 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton
               asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
+              size="lg"
+              className="text-base data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <a href="#">
                 <Building2 className="!size-5"/>
@@ -31,13 +61,7 @@ export function AppSidebar() {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupAction>
-            <Plus/> <span className="sr-only">Add Project</span>
-          </SidebarGroupAction>
-          <SidebarGroupContent></SidebarGroupContent>
-        </SidebarGroup>
+        <NavMain items={data.navMain} />
         <SidebarGroup/>
       </SidebarContent>
       <SidebarFooter/>
