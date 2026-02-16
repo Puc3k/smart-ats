@@ -6,3 +6,31 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model Candidate {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  firstName String
+  lastName String
+  email String @unique
+  phone String?
+
+  cvUrl String?
+
+  status CandidateStatus @default(NEW)
+
+  aiSummary String? @db.Text
+  skills String[]
+  rating Int?
+}
+
+enum CandidateStatus {
+  NEW
+  SCREENING
+  INTERVIEW
+  OFFER
+  REJECTED
+  HIRED
+}
