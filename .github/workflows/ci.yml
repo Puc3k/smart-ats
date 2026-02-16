@@ -36,7 +36,7 @@ jobs:
       - name: 🏗️ Build Application
         run: npm run build
         env:
-          DATABASE_URL: "postgresql://mock:mock@localhost:5432/mock"
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
           CLERK_SECRET_KEY: "sk_test_mock"
           OPENAI_API_KEY: "sk-mock"
