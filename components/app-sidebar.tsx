@@ -20,7 +20,7 @@ const data = {
     },
     {
       title: "Candidates",
-      url: "#",
+      url: "/dashboard/candidates",
       icon: Users,
     },
     {
