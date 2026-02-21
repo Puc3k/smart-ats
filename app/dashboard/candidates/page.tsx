@@ -3,6 +3,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { getCandidates } from '@/features/candidates/db'
 import { Badge, badgeVariants } from '@/components/ui/badge'
 import { VariantProps } from 'class-variance-authority'
+import { AddCandidateForm } from '@/features/candidates/components/add-candidate-form'
 
 export default async function CandidatePage () {
   const candidates = await getCandidates()
@@ -25,6 +26,7 @@ export default async function CandidatePage () {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">Candidates</h1>
+        <AddCandidateForm />
       </div>
       <Card>
         <CardHeader>
