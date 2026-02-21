@@ -9,6 +9,7 @@ import { AppSidebar } from '@/components/app-sidebar'
 import { SiteHeader } from '@/components/site-header'
 import { ThemeProvider } from '@/components/theme-provider'
 import React from 'react'
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -60,6 +61,7 @@ export default function RootLayout ({
       </ThemeProvider>
 
     </ClerkProvider>
+    <Toaster />
     </body>
     </html>
   )
