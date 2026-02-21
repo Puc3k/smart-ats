@@ -12,7 +12,7 @@ export async function createCandidate (data: CandidateFormValues) {
   }
 
   try {
-    await prisma.candidates.create({
+    await prisma.candidate.create({
       data: {
         firstName: result.data.firstName,
         lastName: result.data.lastName,
